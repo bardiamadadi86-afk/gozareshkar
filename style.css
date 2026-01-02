@@ -1,0 +1,286 @@
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Vazirmatn, sans-serif;
+    direction: rtl;
+}
+
+body {
+    font-family: Vazirmatn, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#header {
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.maintable {
+    border: 3px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 70px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(193, 193, 193);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dars,
+.day-sum {
+    border: 3px solid black;
+    width: 70px;
+    height: inherit;
+    background-color: rgb(190, 190, 190);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.base {
+    height: 300px;
+}
+
+#dars-td {
+    height: inherit;
+    width: inherit;
+}
+
+#day-sum,
+#day-sum td {
+    margin-top: 100px;
+    height: 50px;
+}
+
+.desc textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    border: none;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.shanbe,
+.yekshanbe,
+.doshanbe,
+.seshanbe,
+.chaharshanbe,
+.panjshanbe,
+.jome,
+.sum {
+    height: 100%;
+    width: 170px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.test,
+.test-darsad,
+.time-sum,
+.test-sum,
+.time,
+.desc {
+    justify-items: center;
+    text-align: center;
+    width: inherit;
+    height: 100%;
+    border: 3px solid rgb(81, 65, 65);
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.test-darsad {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 2px;
+    height: 100%;
+    width: inherit;
+    justify-items: center;
+    text-align: center;
+    border: 3px solid rgb(81, 65, 65);
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: height 1000ms ease;
+}
+
+.test-darsad:hover {
+    /* animation-name: darsadhover;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards; */
+
+    height: 150px;
+}
+
+.test-darsad:not(:hover) {
+    /* animation-name: darsadnothover;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; */
+    height: 74px;
+}
+
+/* 
+@keyframes darsadhover {
+    from {
+        height: 74px;
+    }
+
+    to {
+        height: 150px;
+    }
+}
+@keyframes darsadnothover {
+    from {
+        height: 150px;
+    }
+
+    to {
+        height: 74px;
+    }
+} */
+
+.test-darsad input {
+    height: 71px;
+}
+
+#darsad,
+#ghalat,
+#nazade {
+    width: 100%;
+}
+
+#ghalat {
+    background-color: rgb(255, 156, 138);
+}
+
+#nazade {
+    background-color: lightgoldenrodyellow;
+}
+
+input[type="number"] {
+    width: 100%;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+.footer {
+    margin-top: 50px;
+    height: 70px;
+    border-collapse: collapse;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer tr {
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.footer tr,
+.footer tr td,
+.footer tr td div {
+    height: inherit;
+}
+
+.class-input,
+.load-input,
+.export {
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.load-input {
+    width: 200px;
+}
+
+
+
+.submit-book,
+
+.clear-table {
+    font-weight: bolder;
+    width: 200px;
+    height: 100%;
+    background-color: lightseagreen;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.load-book {
+    font-weight: bolder;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(0, 255, 38);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.clear-table {
+    background-color: tomato;
+}
+
+
+.export {
+    width: 200px;
+    background-color: yellow;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.export a {
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 60px;
+}
+
+input {
+    text-align: center;
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    border: 00px;
+}
+
+#base-class {
+    display: none;
+}

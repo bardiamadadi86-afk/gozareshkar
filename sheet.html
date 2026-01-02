@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>برگه گزارش</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <table id="maintable">
+      <tr id="header">
+        <th class="maintable">درس</th>
+        <th class="maintable">شنبه</th>
+        <th class="maintable">یکشنبه</th>
+        <th class="maintable">دوشنبه</th>
+        <th class="maintable">سه شنبه</th>
+        <th class="maintable">چهار شنبه</th>
+        <th class="maintable">پنجشنبه</th>
+        <th class="maintable">جمعه</th>
+
+        <th class="maintable">مجموع</th>
+      </tr>
+      <tr class="base" id="base-class">
+        <th class="dars">base-class</th>
+        <td id="dars-td">
+          <table class="shanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="yekshanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="doshanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="seshanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="chaharshanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="panjshanbe">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="test-darsad">
+                <input readonly id="darsad" type="text" placeholder="درصد" />
+                <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+              </td>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="jome">
+            <tr>
+              <td class="test">
+                <input type="number" placeholder="تعداد تست" />
+              </td>
+            </tr>
+            <tr>
+              <td class="desc">
+                <textarea placeholder="توضیحات" ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <div>
+
+                <td class="test-darsad">
+                  <input readonly id="darsad" type="text" placeholder="درصد" />
+                  <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                  <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
+                </td>
+              </div>
+            </tr>
+            <tr>
+              <td class="time">
+                <input
+                  type="text"
+                  id="timeInput"
+                  placeholder="زمان: (00:00)"
+                  maxlength="5"
+                  inputmode="numeric"
+                  
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td id="dars-td">
+          <table class="sum">
+            <tr>
+              <td class="test-sum" id="sum-test">-</td>
+            </tr>
+            <tr>
+              <td class="time-sum" id="sum-time">-</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr id="day-sum">
+        <th class="day-sum">مجموع</th>
+        <td>
+          <table class="shanbe">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="yekshanbe">
+            <tr>
+              <td class="test" ></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="doshanbe">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="seshanbe">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="chaharshanbe">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="panjshanbe">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="jome">
+            <tr>
+              <td class="test"></td>
+            </tr>
+            <tr>
+              <td class="time"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="sum">
+            <tr>
+              <td class="test-sum" id="footer-sum-test">-</td>
+            </tr>
+            <tr>
+              <td class="time-sum" id="footer-sum-time">-</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr id="footer">
+        <table class="footer">
+          <tr>
+            <td>
+              <input
+                type="text"
+                id="book-input"
+                class="class-input"
+                name="Book"
+                placeholder="نام کتاب"
+              />
+            </td>
+            <td>
+              <input
+                id="submit-book"
+                class="submit-book"
+                type="button"
+                value="اضافه"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="load-input"
+                class="load-input"
+                name="Book"
+                placeholder="خروجی"
+              />
+            </td>
+            <td class="export">
+              <a id="export">خروجی</a>
+            </td>
+            <td>
+              <input
+                id="load-book"
+                class="load-book"
+                type="button"
+                value="بارگزاری"
+              />
+            </td>
+            <td>
+              <input
+                id="clear-table"
+                class="clear-table"
+                type="button"
+                value="پاک کردن جدول"
+              />
+            </td>
+          </tr>
+        </table>
+      </tr>
+    </table>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
