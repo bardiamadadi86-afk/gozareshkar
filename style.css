@@ -134,17 +134,35 @@ input[type=number] {
     transition: height 1000ms ease;
 }
 
-.test-darsad:hover {
-    /* animation-name: darsadhover;
+@media (hover: hover) and (pointer: fine) {
+      .test-darsad:hover {
+        /* animation-name: darsadhover;
     animation-duration: 500ms;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards; */
 
-    height: 150px;
+        height: 150px;
+    }
+
+    .test-darsad:not(:hover) {
+        height: 50px;
+    }
 }
 
-.test-darsad:not(:hover) {
-    height: 50px;
+
+@media (hover: none) and (pointer: coarse) {
+    .test-darsad:focus-within {
+        /* animation-name: darsadhover;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards; */
+
+        height: 150px;
+    }
+
+    .test-darsad:not(:focus-within) {
+        height: 50px;
+    }
 }
 
 .test-darsad input {
