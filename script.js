@@ -1,5 +1,9 @@
 const header = document.getElementById("header").getHTML().toString();
 const footer = document.getElementById("footer").getHTML().toString();
+if (!localStorage.getItem("data")) {
+  localStorage.setItem("data", "{}");
+}
+
 function generate_row(name) {
   return document
     .getElementById("base-class")

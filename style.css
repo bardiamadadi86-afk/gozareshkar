@@ -16,6 +16,7 @@ select:focus {
 
 body {
     font-family: Vazirmatn, sans-serif;
+    width: 100%;
 }
 
 input::-webkit-outer-spin-button,
@@ -33,7 +34,9 @@ input[type=number] {
     border-collapse: collapse;
     margin: 0;
 }
-
+#main-table {
+    width: 100%;
+}
 .maintable {
     border: 3px solid rgb(0, 0, 0);
     border-collapse: collapse;
@@ -135,7 +138,7 @@ input[type=number] {
 }
 
 @media (hover: hover) and (pointer: fine) {
-      .test-darsad:hover {
+    .test-darsad:hover {
         /* animation-name: darsadhover;
     animation-duration: 500ms;
     animation-timing-function: ease-in;
@@ -194,10 +197,12 @@ input[type="text"] {
 .footer {
     margin-top: 50px;
     height: 70px;
+    /* width: 100%; */
     border-collapse: collapse;
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 footer tr {
@@ -214,24 +219,20 @@ footer tr {
 .class-input,
 .load-input,
 .export {
-    width: 100px;
+    width: 300px;
     height: 100%;
     text-align: center;
     margin: 0px;
     padding: 0px;
+    
 }
-
-.load-input {
-    width: 200px;
-}
-
 
 
 .submit-book,
 
 .clear-table {
     font-weight: bolder;
-    width: 200px;
+    width: 150px;
     height: 100%;
     background-color: lightseagreen;
     text-align: center;
@@ -271,7 +272,6 @@ footer tr {
     vertical-align: middle;
     font-weight: bolder;
     color: rgb(0, 0, 0);
-    font-size: 20px;
     line-height: 60px;
 }
 
