@@ -55,7 +55,7 @@ input[type=number] {
 }
 
 .base {
-    height: 300px;
+    height: 200px;
 }
 
 #dars-td {
@@ -104,11 +104,19 @@ input[type=number] {
     justify-items: center;
     text-align: center;
     width: inherit;
-    height: 100%;
+    /* height: 100%; */
     border: 3px solid rgb(81, 65, 65);
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.test,
+.test-darsad,
+
+.time,
+.desc {
+    height: 100%;
 }
 
 .test-darsad {
@@ -136,35 +144,11 @@ input[type=number] {
 }
 
 .test-darsad:not(:hover) {
-    /* animation-name: darsadnothover;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards; */
-    height: 74px;
+    height: 50px;
 }
-
-/* 
-@keyframes darsadhover {
-    from {
-        height: 74px;
-    }
-
-    to {
-        height: 150px;
-    }
-}
-@keyframes darsadnothover {
-    from {
-        height: 150px;
-    }
-
-    to {
-        height: 74px;
-    }
-} */
 
 .test-darsad input {
-    height: 71px;
+    height: 50px;
 }
 
 #darsad,
