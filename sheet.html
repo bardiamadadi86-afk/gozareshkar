@@ -8,6 +8,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
   </head>
   <body>
     <table id="maintable">
@@ -34,7 +35,7 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
@@ -52,7 +53,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -67,7 +67,7 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
@@ -85,7 +85,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -118,7 +117,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -133,7 +131,7 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
@@ -151,7 +149,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -166,7 +163,7 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
@@ -184,7 +181,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -199,7 +195,7 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
@@ -217,7 +213,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -232,15 +227,18 @@
             </tr>
             <tr>
               <td class="desc">
-                <textarea placeholder="توضیحات" ></textarea>
+                <textarea placeholder="توضیحات"></textarea>
               </td>
             </tr>
             <tr>
               <div>
-
                 <td class="test-darsad">
                   <input readonly id="darsad" type="text" placeholder="درصد" />
-                  <input id="nazade" placeholder="تعداد نزده‌ها" type="number" />
+                  <input
+                    id="nazade"
+                    placeholder="تعداد نزده‌ها"
+                    type="number"
+                  />
                   <input id="ghalat" placeholder="تعداد غلط‌ها" type="number" />
                 </td>
               </div>
@@ -253,7 +251,6 @@
                   placeholder="زمان: (00:00)"
                   maxlength="5"
                   inputmode="numeric"
-                  
                 />
               </td>
             </tr>
@@ -286,7 +283,7 @@
         <td>
           <table class="yekshanbe">
             <tr>
-              <td class="test" ></td>
+              <td class="test"></td>
             </tr>
             <tr>
               <td class="time"></td>
@@ -375,6 +372,11 @@
                 value="اضافه کردن کتاب"
               />
             </td>
+
+            <td class="export">
+              <a id="export">خروجی گرفتن</a>
+            </td>
+
             <td>
               <input
                 type="text"
@@ -384,15 +386,13 @@
                 placeholder="گزارش کار ورودی"
               />
             </td>
-            <td class="export">
-              <a id="export">خروجی گرفتن</a>
-            </td>
+
             <td>
               <input
                 id="load-book"
                 class="load-book"
                 type="button"
-                value= "بارگزاری گزارش"
+                value="بارگزاری گزارش"
               />
             </td>
             <td>

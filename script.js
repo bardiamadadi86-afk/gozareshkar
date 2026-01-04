@@ -74,7 +74,7 @@ function insert_row(bookname) {
   footer.parentNode.insertBefore(row, footer);
 }
 // load each row in the beginning
-function load_row(bookname,first) {
+function load_row(bookname, first) {
   insert_row(bookname);
   // Initialize inputs to 0
   book_element = document.getElementById(bookname);
@@ -310,7 +310,7 @@ document.getElementById("submit-book").addEventListener("click", function () {
 document.getElementById("load-book").addEventListener("click", function () {
   localStorage.setItem(
     "data",
-    document.getElementById("load-input").value.toString()
+    LZString.decompressFromBase64(document.getElementById("load-input").value.toString())
   );
   window.location.reload();
 });
@@ -322,7 +322,21 @@ document.getElementById("clear-table").addEventListener("click", function () {
 });
 
 document.getElementById("export").addEventListener("click", function () {
-  document.getElementById("export").innerText = "Exported!";
-  navigator.clipboard.writeText(localStorage.getItem("data"));
-  alert("Exported to Clipboard!");
+  document.getElementById("export").innerText = "خروجی گرفته شد!";
+  navigator.clipboard.writeText(LZString.compressToBase64(localStorage.getItem("data")));
+  alert("در کلیپبورد شم ذخیره شد!");
 });
+
+function encodeBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
+function decodeBase64(base64) {
+  const binary = atob(base64);
+  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+console.log(LZString.compressToBase64('{"حسابان2":{"test":[56,0,35,40,40,0,0],"time":[135,0,105,120,90,0,0],"darsad":[[4,6],[0,0],[5,1],[3,6],[8,4],[0,0],[0,0]],"desc":["حد در بینهایت نشرالگو","","حد در بینهایت نشرالگو","حد بینهایت نشرالگو","مثلثات مروری آیکیو","",""]},"شیمی پایه(11)":{"test":[0,30,0,0,0,50,0],"time":[300,210,0,0,0,150,0],"darsad":[[0,0],[10,2],[0,0],[0,0],[0,0],[3,4],[0,0]],"desc":["مروری شیمی آلی","حل تست بخش اول شیمی آلی نردبام جامع","","","","حل تست شیمی 11 فصل 1 ایکیو",""]},"ادبیات":{"test":[0,0,0,50,0,0,0],"time":[0,0,180,90,0,0,0],"darsad":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"desc":["","","فصل3 جزوه جهان مهین","حل سوالات جزوه جهان مهین","","",""]},"هندسه 12":{"test":[0,0,0,65,70,0,0],"time":[0,0,0,0,0,0,0],"darsad":[[0,0],[0,0],[0,0],[6,7],[2,3],[0,0],[0,0]],"desc":["","","","فصل2 مروری آیکیو","فصل1 مروری حل آزممون","",""]}}'));
