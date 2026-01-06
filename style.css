@@ -154,17 +154,20 @@ input[type=number] {
 
 
 @media (hover: none) and (pointer: coarse) {
-    .test-darsad:hover {
-        /* animation-name: darsadhover;
-    animation-duration: 500ms;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards; */
+    /* .test-darsad {
+
 
         height: 150px;
     }
 
-    .test-darsad:not(:hover) {
+    .test-darsad:not(:focus-within) {
         height: 50px;
+    } */
+    .test-darsad{
+        height: 50px;
+    }
+    .touched {
+        height: 150px;
     }
 }
 
