@@ -297,13 +297,10 @@ document.addEventListener("DOMContentLoaded", function () {
     time_listener(bookname);
   }
 
-  document.querySelectorAll("td").forEach(function (td) {
-    td.addEventListener("click", function () {
-      const darsadTd = td.querySelector(".test-darsad");
-      if (!darsadTd) return; // ⬅️ نجات‌دهنده
-
-      darsadTd.classList.toggle("touched");
-      console.log("Touched:", darsadTd);
+  document.querySelectorAll("td .test-darsad").forEach(function (el) {
+    el.addEventListener("click", function () {
+      el.classList.toggle("touched");
+      console.log("Touched:", el);
     });
   });
 });
