@@ -127,8 +127,7 @@ input[type=number] {
 .test-darsad {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 2px;
-    height: 100%;
+    height: 50px;
     width: inherit;
     justify-items: center;
     text-align: center;
@@ -136,19 +135,25 @@ input[type=number] {
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    transition: height 1000ms ;
+    transition: height 1000ms;
 }
 
 
-
-.test-darsad {
-    height: 50px;
+.test-darsad[data-status="open"] {
+    height: 150px;   /* وقتی بازه */
 }
 
-.touched,
+.test-darsad[data-status="close"] {
+    height: 50px;    /* وقتی بسته است */
+}
+
+/* .test-darsad.touched,
 .test-darsad:hover {
     height: 150px;
 }
+.test-darsad{
+    height: 50px;
+} */
 
 .test-darsad input {
     height: 50px;

@@ -298,9 +298,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.querySelectorAll("td .test-darsad").forEach(function (el) {
-    el.addEventListener("click", function () {
+    el.addEventListener("touchstart", function () {
       el.classList.toggle("touched");
-      console.log("Touched:", el);
+
+      if (el.classList.contains("touched")) {
+        el.setAttribute("data-status", "open");
+      } else {
+        el.setAttribute("data-status", "close");
+      }
     });
   });
 });
