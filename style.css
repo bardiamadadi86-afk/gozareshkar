@@ -34,9 +34,11 @@ input[type=number] {
     border-collapse: collapse;
     margin: 0;
 }
+
 #main-table {
     width: 100%;
 }
+
 .maintable {
     border: 3px solid rgb(0, 0, 0);
     border-collapse: collapse;
@@ -154,6 +156,7 @@ input[type=number] {
 
 
 @media (hover: none) and (pointer: coarse) {
+
     /* .test-darsad {
 
 
@@ -163,9 +166,14 @@ input[type=number] {
     .test-darsad:not(:focus-within) {
         height: 50px;
     } */
-    .test-darsad{
+    body {
+        background: red !important;
+    }
+
+    .test-darsad {
         height: 50px;
     }
+
     .touched {
         height: 150px;
     }
@@ -226,7 +234,8 @@ footer tr {
 .footer a {
     font-size: inherit;
     height: 100%;
-    line-height: 70px; /* هم‌ارتفاع با footer */
+    line-height: 70px;
+    /* هم‌ارتفاع با footer */
     text-align: center;
 }
 
@@ -264,7 +273,7 @@ footer tr {
     text-align: center;
     margin: 0px;
     padding: 0px;
-    
+
 }
 
 
