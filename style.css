@@ -154,7 +154,7 @@ input[type=number] {
 
 
 @media (hover: none) and (pointer: coarse) {
-    .test-darsad:focus-within {
+    .test-darsad:hover {
         /* animation-name: darsadhover;
     animation-duration: 500ms;
     animation-timing-function: ease-in;
@@ -163,7 +163,7 @@ input[type=number] {
         height: 150px;
     }
 
-    .test-darsad:not(:focus-within) {
+    .test-darsad:not(:hover) {
         height: 50px;
     }
 }
@@ -194,27 +194,64 @@ input[type="text"] {
     width: 100%;
 }
 
+
 .footer {
     margin-top: 50px;
     height: 70px;
-    /* width: 100%; */
     border-collapse: collapse;
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 
+    font-size: clamp(12px, 1.2vw, 16px);
 }
+
+.footer td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
 
 footer tr {
     border-radius: 40px;
     overflow: hidden;
+
 }
+
+.footer input,
+.footer a {
+    font-size: inherit;
+    height: 100%;
+    line-height: 70px; /* هم‌ارتفاع با footer */
+    text-align: center;
+}
+
+.export {
+    width: 200px;
+    height: 100%;
+    background-color: yellow;
+}
+
+.export a {
+    display: block;
+    height: 100%;
+    line-height: 70px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+
 
 .footer tr,
 .footer tr td,
 .footer tr td div {
     height: inherit;
 }
+
+
+
 
 .class-input,
 .load-input,
@@ -259,7 +296,6 @@ footer tr {
 .export {
     width: 200px;
     background-color: yellow;
-    height: 300px;
     text-align: center;
     vertical-align: middle;
 
