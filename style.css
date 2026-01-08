@@ -30,6 +30,32 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+.error {
+    width: 250px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(1px);
+    z-index: 1000;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    /* filter: blur(10px); */   
+}
+.error[state="show"] {
+    top: 20px;
+    transition: top .5s ease;
+}
+.error[state="hide"] {
+    top: -100px;
+    transition: top .5s ease;
+}
+
 #header {
     border-collapse: collapse;
     margin: 0;

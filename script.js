@@ -312,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // NEW BOOK SUBMITTED
 document.getElementById("submit-book").addEventListener("click", function () {
   bookname = document.getElementById("book-input").value;
+  showError(`کتابِ ${bookname} اضافه شد!`, "rgba(52, 184, 255, 0.8)");
   create_row(bookname);
   // test listeners
   test_listener(bookname);
@@ -327,13 +328,20 @@ document.getElementById("load-book").addEventListener("click", function () {
       document.getElementById("load-input").value.toString()
     )
   );
-  window.location.reload();
+  showError("درحال بارگزاری گزارش جدید...", "rgba(114, 255, 128, 0.8)");
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
 });
 
 // CLEAR TABLE AND REFRESH
 document.getElementById("clear-table").addEventListener("click", function () {
   localStorage.setItem("data", JSON.stringify({}));
-  window.location.reload();
+
+  showError("درحال پاک کردن گزارش کار...", "rgba(255, 0, 0, 0.8)");
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
 });
 
 document.getElementById("export").addEventListener("click", function () {
@@ -341,7 +349,7 @@ document.getElementById("export").addEventListener("click", function () {
   navigator.clipboard.writeText(
     LZString.compressToBase64(localStorage.getItem("data"))
   );
-  alert("در کلیپبورد شم ذخیره شد!");
+  showError("در کلیپبورد شما ذخیره شد!", "rgba(251, 255, 0, 0.8)");
 });
 
 function encodeBase64(str) {
@@ -354,4 +362,12 @@ function decodeBase64(base64) {
   const binary = atob(base64);
   const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
   return new TextDecoder().decode(bytes);
+}
+function showError(message, color) {
+  document.getElementsByClassName("error")[0].setAttribute("state", "show");
+  document.getElementsByClassName("error")[0].innerText = message;
+  document.getElementsByClassName("error")[0].style.backgroundColor = color;
+  setTimeout(() => {
+    document.getElementsByClassName("error")[0].setAttribute("state", "hide");
+  }, 2000);
 }
