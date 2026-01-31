@@ -17,7 +17,45 @@ select:focus {
 body {
     font-family: Vazirmatn, sans-serif;
     min-width: fit-content;
-    background-color: rgb(255, 237, 148);
+    background-color: #f2ecd9;
+
+    background-image:
+        /* خط‌کشی افقی */
+        linear-gradient(to bottom,
+            rgba(90, 80, 60, 0.12) 1px,
+            transparent 1px);
+
+    background-size: 100% 26px;
+    line-height: 26px;
+}
+
+/* لایه نویز رندوم */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        repeating-linear-gradient(7deg,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.02) 1px,
+            transparent 1px,
+            transparent 2px),
+        repeating-linear-gradient(83deg,
+            rgba(0, 0, 0, 0.015),
+            rgba(0, 0, 0, 0.015) 1px,
+            transparent 1px,
+            transparent 3px),
+        repeating-linear-gradient(37deg,
+            rgba(0, 0, 0, 0.01),
+            rgba(0, 0, 0, 0.01) 1px,
+            transparent 1px,
+            transparent 4px);
+
+    mix-blend-mode: multiply;
+    opacity: 0.8;
 }
 
 input::-webkit-outer-spin-button,
@@ -46,12 +84,14 @@ input[type=number] {
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
-    /* filter: blur(10px); */   
+    /* filter: blur(10px); */
 }
+
 .error[state="show"] {
     top: 20px;
     transition: top .5s ease;
 }
+
 .error[state="hide"] {
     top: -100px;
     transition: top .5s ease;
@@ -59,32 +99,35 @@ input[type=number] {
 
 #header {
     border-collapse: collapse;
-    margin: 0;
 }
 
 #main-table {
-    
     width: 100%;
+    border-collapse: collapse; 
 }
 
+#dars-td{
+    border-bottom: 4px solid rgba(90, 80, 60, 0.5);;;
+}
 .maintable {
-    border: 3px solid rgb(0, 0, 0);
     border-collapse: collapse;
     border-spacing: 0;
     width: 70px;
     height: 50px;
-    padding: 10px;
-    background-color: rgb(193, 193, 193);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    padding: 0px;
+    border-right: 3px solid rgba(90, 80, 60, 0.2);
+    border-bottom: 4px solid rgba(90, 80, 60, 0.5);;;
 }
 
 .dars,
 .day-sum {
-    border: 3px solid black;
     width: 70px;
     height: inherit;
-    background-color: rgb(190, 190, 190);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid rgba(90, 80, 60, 0.5);;;
+    border-right: 3px solid rgba(90, 80, 60, 0.2);;;
+}
+.test,.desc,.test-darsad{
+    border-bottom: 3px solid rgba(90, 80, 60, 0.2);
 }
 
 .base {
@@ -94,7 +137,10 @@ input[type=number] {
 #dars-td {
     height: inherit;
     width: inherit;
+    background-color: transparent;
 }
+
+
 
 #day-sum,
 #day-sum td {
@@ -113,6 +159,7 @@ input[type=number] {
     margin-right: auto;
     text-align: center;
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 .shanbe,
@@ -123,9 +170,16 @@ input[type=number] {
 .panjshanbe,
 .jome,
 .sum {
+    border-right: 3px solid rgba(90, 80, 60, 0.2);
     height: 100%;
     width: 170px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+}
+
+
+.time input {
+    background-color: transparent;
 }
 
 .test,
@@ -138,18 +192,23 @@ input[type=number] {
     text-align: center;
     width: inherit;
     /* height: 100%; */
-    border: 3px solid rgb(81, 65, 65);
     z-index: 1;
     overflow: hidden;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
 }
 
 .test,
 .test-darsad,
-
 .time,
 .desc {
     height: 100%;
+    background-color: transparent;
+}
+
+.test input {
+    min-height: 50px;
+    height: 100%;
+    background-color: transparent;
 }
 
 .test-darsad {
@@ -159,24 +218,27 @@ input[type=number] {
     width: inherit;
     justify-items: center;
     text-align: center;
-    border: 3px solid rgb(81, 65, 65);
     z-index: 1;
     overflow: hidden;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     transition: height 1000ms;
+    background-color: transparent;
 }
 
 
 .test-darsad[data-status="open"] {
-    height: 150px;   /* وقتی بازه */
+    height: 150px;
+    /* وقتی بازه */
 }
 
 .test-darsad[data-status="close"] {
-    height: 50px;    /* وقتی بسته است */
+    height: 50px;
+    /* وقتی بسته است */
 }
+
 .test-darsad:hover {
     height: 150px;
 }
+
 /* .test-darsad.touched,
 .test-darsad:hover {
     height: 150px;
@@ -187,30 +249,35 @@ input[type=number] {
 
 .test-darsad input {
     height: 50px;
+    background-color: transparent;
 }
 
 #darsad,
 #ghalat,
 #nazade {
     width: 100%;
+
 }
 
 #ghalat {
-    background-color: rgb(255, 156, 138);
+    background-color: rgba(255, 0, 0, 0.2);
 }
 
 #nazade {
-    background-color: lightgoldenrodyellow;
+    background-color: rgba(255, 251, 0, 0.1);
 }
 
 input[type="number"] {
     width: 100%;
+
 }
 
 input[type="text"] {
     width: 100%;
 }
-
+table{
+    border-collapse: collapse;
+}
 
 .footer {
     margin-right: auto;
@@ -248,19 +315,6 @@ footer tr {
     text-align: center;
 }
 
-.export {
-    height: 100%;
-    background-color: yellow;
-}
-
-.export a {
-    display: block;
-    height: 100%;
-    line-height: 70px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
 
 
 
@@ -278,6 +332,7 @@ footer tr {
 .export {
     height: 100%;
     text-align: center;
+    vertical-align: middle;
     margin: 0px;
     padding: 0px;
 
@@ -314,7 +369,7 @@ footer tr {
 
 
 .export {
-    
+
     background-color: yellow;
     text-align: center;
     vertical-align: middle;
@@ -331,6 +386,7 @@ footer tr {
     color: rgb(0, 0, 0);
     line-height: 60px;
 }
+
 
 input {
     text-align: center;
