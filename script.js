@@ -289,6 +289,7 @@ function update_book_time_sum(bookname) {
 // PAGE LOADED
 document.addEventListener("DOMContentLoaded", function () {
   //load each book from localStorage
+
   for (const bookname in getStoredBooks()) {
     load_row(bookname);
     // test listeners

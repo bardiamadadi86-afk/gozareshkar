@@ -17,6 +17,7 @@ select:focus {
 body {
     font-family: Vazirmatn, sans-serif;
     min-width: fit-content;
+    min-height: fit-content;
     background-color: #f2ecd9;
 
     background-image:
@@ -102,7 +103,6 @@ input[type=number] {
 }
 
 #main-table {
-    width: 100%;
     border-collapse: collapse; 
 }
 
@@ -112,31 +112,34 @@ input[type=number] {
 .maintable {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 70px;
+    /* width: 70px; */
     height: 50px;
     padding: 0px;
     border-right: 3px solid rgba(90, 80, 60, 0.2);
     border-bottom: 4px solid rgba(90, 80, 60, 0.5);;;
 }
 
-.dars,
-.day-sum {
-    width: 70px;
-    height: inherit;
+.dars{
     border-bottom: 4px solid rgba(90, 80, 60, 0.5);;;
     border-right: 3px solid rgba(90, 80, 60, 0.2);;;
+}
+
+.dars,
+.day-sum {
+    height: inherit;
 }
 .test,.desc,.test-darsad{
     border-bottom: 3px solid rgba(90, 80, 60, 0.2);
 }
 
 .base {
+    width: 100%;
     height: 200px;
 }
 
 #dars-td {
     height: inherit;
-    width: inherit;
+    width: 12.5%;
     background-color: transparent;
 }
 
@@ -172,7 +175,8 @@ input[type=number] {
 .sum {
     border-right: 3px solid rgba(90, 80, 60, 0.2);
     height: 100%;
-    width: 170px;
+    width: 100%;
+    /* width: 170px; */
     background-color: transparent;
 
 }
@@ -190,7 +194,7 @@ input[type=number] {
 .desc {
     justify-items: center;
     text-align: center;
-    width: inherit;
+    width: 100%;
     /* height: 100%; */
     z-index: 1;
     overflow: hidden;
@@ -280,24 +284,33 @@ table{
 }
 
 .footer {
-    margin-right: auto;
     margin-left: auto;
-    width: 90%;
-    margin-top: 50px;
+    margin-right: auto;
+    border-radius: 50px 50px 0px 0px;
+    background-color: #FFCE99;
+    z-index: 1000;
+    position: sticky;
+    margin-top: 100px;
+    width: 50%;
+    min-width: 765px;
+    bottom: 0px;
     height: 70px;
-    border-collapse: collapse;
-    border-radius: 40px;
+    box-shadow: -3px 0px  rgb(95, 88, 73),
+     3px 0px  rgb(95, 88, 73),
+     0px -3px rgb(95, 88, 73);
     overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-
     font-size: clamp(12px, 1.2vw, 16px);
 }
-
+.footer
 .footer td {
     text-align: center;
     vertical-align: middle;
+    
 }
 
+.footer tr td:hover{
+    background-color: #F7C58E;
+}
 
 
 footer tr {
@@ -330,6 +343,8 @@ footer tr {
 .class-input,
 .load-input,
 .export {
+    background-color: transparent;
+
     height: 100%;
     text-align: center;
     vertical-align: middle;
@@ -345,7 +360,8 @@ footer tr {
     font-weight: bolder;
     height: 100%;
     width: 100%;
-    background-color: lightseagreen;
+    background-color: transparent;
+    /* background-color: lightseagreen; */
     text-align: center;
     margin: 0px;
     padding: 0px;
@@ -355,7 +371,9 @@ footer tr {
     font-weight: bolder;
     height: 100%;
     width: 100%;
-    background-color: rgb(0, 255, 38);
+    background-color: transparent;
+
+    /* background-color: rgb(0, 255, 38); */
     text-align: center;
     margin: 0px;
     padding: 0px;
@@ -364,13 +382,16 @@ footer tr {
 
 .clear-table {
     width: 100%;
-    background-color: tomato;
+    background-color: transparent;
+
+    /* background-color: tomato; */
 }
 
 
 .export {
+    background-color: transparent;
 
-    background-color: yellow;
+    /* background-color: yellow; */
     text-align: center;
     vertical-align: middle;
 
