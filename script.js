@@ -61,7 +61,9 @@ function minutesToTime(totalMinutes) {
 
 // Books = { math: { test: [], time: [] }, physics: { test: [], time: [] } }
 function getStoredBooks() {
-  return JSON.parse(localStorage.getItem("data"));
+  
+  // return JSON.parse(localStorage.getItem("data"));
+  return loadBooks();
 }
 function create_row(bookname) {
   insert_row(bookname);
@@ -91,7 +93,7 @@ function create_row(bookname) {
     darsad: Array(7).fill([0, 0]),
     desc: Array(7).fill(""),
   };
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books)
 }
 function insert_row(bookname) {
   book_content = getStoredBooks()[bookname];
@@ -140,31 +142,31 @@ function load_row(bookname, first) {
 function store_new_test_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].test[dayindex] = Number(newvalue);
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books)
 }
 
 function store_new_desc_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].desc[dayindex] = newvalue;
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books);
 }
 
 // store new test darsad when chaned
 function store_new_darsad_value_nazade(bookname, dayindex, nazade_value) {
   books = getStoredBooks();
   books[bookname].darsad[dayindex][0] = nazade_value;
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books);
 }
 function store_new_darsad_value_ghalat(bookname, dayindex, ghalat_value) {
   books = getStoredBooks();
   books[bookname].darsad[dayindex][1] = ghalat_value;
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books);
 }
 // store new time value when chaned
 function store_new_time_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].time[dayindex] = Number(timeToMinutes(newvalue));
-  localStorage.setItem("data", JSON.stringify(books));
+  saveBooks(books);
 }
 function update_book_darsad(bookname) {
   books = getStoredBooks();
@@ -354,16 +356,16 @@ document.getElementById("submit-book").addEventListener("click", function () {
 // IMPORT NEW TABLE
 document.getElementById("load-book").addEventListener("click", async function () {
 
-  const books = await loadBooks();
+  // const books = await loadBooks();
 
-  localStorage.setItem(
-    "data",
-    JSON.stringify(books)
-  );
-  showError("درحال بارگزاری گزارش جدید...", "rgba(114, 255, 128, 0.8)");
-  setTimeout(() => {
-    window.location.reload();
-  }, 3000);
+  // localStorage.setItem(
+  //   "data",
+  //   JSON.stringify(books)
+  // );
+  // showError("درحال بارگزاری گزارش جدید...", "rgba(114, 255, 128, 0.8)");
+  // setTimeout(() => {
+  //   window.location.reload();
+  // }, 3000);
 });
 
 // CLEAR TABLE AND REFRESH
@@ -382,9 +384,9 @@ document.getElementById("export").addEventListener("click", function () {
     LZString.compressToBase64(localStorage.getItem("data"))
   );
   showError("در کلیپبورد شما ذخیره شد!", "rgba(251, 255, 0, 0.8)");
-  saveBooks(
-    JSON.parse(localStorage.getItem("data"))
-  );
+  // saveBooks(
+  //   JSON.parse(localStorage.getItem("data"))
+  // );
 });
 
 function encodeBase64(str) {
