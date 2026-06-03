@@ -3,12 +3,13 @@
   <head>
     <title>برگه گزارش</title>
     <link rel="stylesheet" href="./style.css" />
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
       rel="stylesheet"
       type="text/css"
-    />
+    /> -->
     <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
     <div class="error">Error</div>
@@ -347,61 +348,66 @@
       </tr>
 
       <tr id="footer">
-        <table class="footer">
-          <tr>
-            <td>
-              <input
-                type="text"
-                id="book-input"
-                class="class-input"
-                name="Book"
-                placeholder="نام کتاب مورد نظر را وارد کنید"
-              />
-            </td>
-            <td>
-              <input
-                id="submit-book"
-                class="submit-book"
-                type="button"
-                value="اضافه کردن کتاب"
-              />
-            </td>
+        <div id="hmm">
 
-            <td class="export">
-              <a id="export">خروجی گرفتن</a>
-            </td>
+          <table class="footer">
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  id="book-input"
+                  class="class-input"
+                  name="Book"
+                  placeholder="نام کتاب مورد نظر را وارد کنید"
+                />
+              </td>
+              <td>
+                <input
+                  id="submit-book"
+                  class="submit-book"
+                  type="button"
+                  value="اضافه کردن کتاب"
+                />
+              </td>
+  
+              <td class="export">
+                <a id="export">خروجی گرفتن</a>
+              </td>
+  
+              <td>
+                <input
+                  type="text"
+                  id="load-input"
+                  class="load-input"
+                  name="Book"
+                  placeholder="گزارش کار ورودی"
+                />
+              </td>
+  
+              <td>
+                <input
+                  id="load-book"
+                  class="load-book"
+                  type="button"
+                  value="بارگزاری گزارش"
+                />
+              </td>
+              <td>
+                <input
+                  id="clear-table"
+                  class="clear-table"
+                  type="button"
+                  value="پاک کردن گزارش"
+                />
+              </td>
+            </tr>
+          </table>
 
-            <td>
-              <input
-                type="text"
-                id="load-input"
-                class="load-input"
-                name="Book"
-                placeholder="گزارش کار ورودی"
-              />
-            </td>
-
-            <td>
-              <input
-                id="load-book"
-                class="load-book"
-                type="button"
-                value="بارگزاری گزارش"
-              />
-            </td>
-            <td>
-              <input
-                id="clear-table"
-                class="clear-table"
-                type="button"
-                value="پاک کردن گزارش"
-              />
-            </td>
-          </tr>
-        </table>
+        </div>
       </tr>
     </table>
 
     <script src="./script.js"></script>
+    
   </body>
 </html>

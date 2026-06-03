@@ -4,18 +4,18 @@ select:focus {
     outline: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap'); */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Vazirmatn, sans-serif;
+    /* font-family: Vazirmatn,kalame, sans-serif; */
+    font-family: 'Vazirmatn','Kalameh','Kalameh Bold','B Titr', sans-serif;
     direction: rtl;
 }
 
 body {
-    font-family: Vazirmatn, sans-serif;
     min-width: fit-content;
     min-height: fit-content;
     background-color: #f2ecd9;
@@ -287,15 +287,18 @@ input[type="text"] {
 table{
     border-collapse: collapse;
 }
+#blank{
+    background-color: red;
+    height: 200px;
+}
+
+
 
 .footer {
-    margin-left: auto;
-    margin-right: auto;
+    
     border-radius: 50px 50px 0px 0px;
     background-color: #FFCE99;
     z-index: 1000;
-    position: sticky;
-    margin-top: 100px;
     width: 50%;
     min-width: 765px;
     bottom: 0px;
@@ -305,6 +308,9 @@ table{
      0px -3px rgb(95, 88, 73);
     overflow: hidden;
     font-size: clamp(12px, 1.2vw, 16px);
+    
+    margin: auto;
+    
 }
 .footer
 .footer td {

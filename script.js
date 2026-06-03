@@ -1,3 +1,33 @@
+const SUPABASE_URL = "https://rzxhhokujxzksjlmarjp.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6eGhob2t1anh6a3NqbG1hcmpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NjkwOTgsImV4cCI6MjA5NjA0NTA5OH0.R38hwxo-5nMP-duxoulgTs3PKY2IaAPWikSwJmtlpcA";
+const supabaseClient  = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+async function saveBooks(books) {
+  await supabaseClient 
+    .from("reports")
+    .upsert({
+      id: 1,
+      data: books
+    });
+}
+async function loadBooks() {
+  const { data, error } = await supabaseClient 
+    .from("reports")
+    .select("*")
+    .eq("id", 1)
+    .single();
+
+  if (data) {
+    return data.data;
+  }
+
+  return {};
+}
+
 const header = document.getElementById("header").getHTML().toString();
 const footer = document.getElementById("footer").getHTML().toString();
 if (!localStorage.getItem("data")) {
@@ -322,12 +352,13 @@ document.getElementById("submit-book").addEventListener("click", function () {
 });
 
 // IMPORT NEW TABLE
-document.getElementById("load-book").addEventListener("click", function () {
+document.getElementById("load-book").addEventListener("click", async function () {
+
+  const books = await loadBooks();
+
   localStorage.setItem(
     "data",
-    LZString.decompressFromBase64(
-      document.getElementById("load-input").value.toString()
-    )
+    JSON.stringify(books)
   );
   showError("درحال بارگزاری گزارش جدید...", "rgba(114, 255, 128, 0.8)");
   setTimeout(() => {
@@ -351,6 +382,9 @@ document.getElementById("export").addEventListener("click", function () {
     LZString.compressToBase64(localStorage.getItem("data"))
   );
   showError("در کلیپبورد شما ذخیره شد!", "rgba(251, 255, 0, 0.8)");
+  saveBooks(
+    JSON.parse(localStorage.getItem("data"))
+  );
 });
 
 function encodeBase64(str) {
