@@ -70,9 +70,7 @@ function minutesToTime(totalMinutes) {
 
 // Books = { math: { test: [], time: [] }, physics: { test: [], time: [] } }
 function getStoredBooks() {
-  
-  // return JSON.parse(localStorage.getItem("data"));
-  return loadBooks();
+  return JSON.parse(localStorage.getItem("data"));
 }
 function create_row(bookname) {
   insert_row(bookname);
@@ -102,7 +100,7 @@ function create_row(bookname) {
     darsad: Array(7).fill([0, 0]),
     desc: Array(7).fill(""),
   };
-  saveBooks(books)
+  localStorage.setItem("data", JSON.stringify(books));
 }
 function insert_row(bookname) {
   book_content = getStoredBooks()[bookname];
@@ -151,31 +149,31 @@ function load_row(bookname, first) {
 function store_new_test_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].test[dayindex] = Number(newvalue);
-  saveBooks(books)
+  localStorage.setItem("data", JSON.stringify(books));
 }
 
 function store_new_desc_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].desc[dayindex] = newvalue;
-  saveBooks(books);
+  localStorage.setItem("data", JSON.stringify(books));
 }
 
 // store new test darsad when chaned
 function store_new_darsad_value_nazade(bookname, dayindex, nazade_value) {
   books = getStoredBooks();
   books[bookname].darsad[dayindex][0] = nazade_value;
-  saveBooks(books);
+  localStorage.setItem("data", JSON.stringify(books));
 }
 function store_new_darsad_value_ghalat(bookname, dayindex, ghalat_value) {
   books = getStoredBooks();
   books[bookname].darsad[dayindex][1] = ghalat_value;
-  saveBooks(books);
+  localStorage.setItem("data", JSON.stringify(books));
 }
 // store new time value when chaned
 function store_new_time_value(bookname, dayindex, newvalue) {
   books = getStoredBooks();
   books[bookname].time[dayindex] = Number(timeToMinutes(newvalue));
-  saveBooks(books);
+  localStorage.setItem("data", JSON.stringify(books));
 }
 function update_book_darsad(bookname) {
   books = getStoredBooks();
@@ -427,4 +425,3 @@ function showError(message, color) {
     document.getElementsByClassName("error")[0].setAttribute("state", "hide");
   }, 2000);
 }
-
