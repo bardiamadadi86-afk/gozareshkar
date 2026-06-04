@@ -71,7 +71,7 @@ input[type=number] {
 }
 
 .error {
-    width: 250px;
+    width: 300px;
     height: fit-content;
     
     overflow: auto;
