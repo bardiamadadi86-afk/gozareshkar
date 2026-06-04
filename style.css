@@ -293,7 +293,7 @@ table{
 
     background-color: #FFCE99;
     z-index: 1000;
-    position: sticky;
+    /* position: sticky; */
     margin-top: 0px;
     width: 100%;
     min-width: 765px;
