@@ -13,7 +13,7 @@ async function test() {
   console.log("ERROR:", error);
 }
 
-test();
+// test();
 
 async function saveBooks(books) {
   await supabaseClient 
@@ -36,6 +36,7 @@ async function loadBooks() {
 
   return {};
 }
+console.log(loadBooks)
 
 const header = document.getElementById("header").getHTML().toString();
 const footer = document.getElementById("footer").getHTML().toString();
