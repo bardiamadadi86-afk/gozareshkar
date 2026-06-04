@@ -1,3 +1,42 @@
+const SUPABASE_URL = "https://rzxhhokujxzksjlmarjp.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6eGhob2t1anh6a3NqbG1hcmpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NjkwOTgsImV4cCI6MjA5NjA0NTA5OH0.R38hwxo-5nMP-duxoulgTs3PKY2IaAPWikSwJmtlpcA";
+const supabaseClient  = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+async function test() {
+  const { data, error } = await supabaseClient
+    .from("reports")
+    .select("*");
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+}
+
+// test();
+
+async function saveBooks(books) {
+  await supabaseClient 
+    .from("reports")
+    .upsert({
+      id: 1,
+      data: books
+    });
+}
+async function loadBooks() {
+  const { data, error } = await supabaseClient 
+    .from("reports")
+    .select("*")
+    .eq("id", 1)
+    .single();
+
+  if (data) {
+    return data.data;
+  }
+
+  return {};
+}
+
 const header = document.getElementById("header").getHTML().toString();
 const footer = document.getElementById("footer").getHTML().toString();
 if (!localStorage.getItem("data")) {
@@ -287,9 +326,16 @@ function update_book_time_sum(bookname) {
 }
 
 // PAGE LOADED
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+  //put books from server to client:
+  // const books = await loadBooks();
+  // localStorage.setItem(
+  //   "data",
+  //   JSON.stringify(books)
+  // );
+  
   //load each book from localStorage
-
+  
   for (const bookname in getStoredBooks()) {
     load_row(bookname);
     // test listeners
@@ -322,48 +368,55 @@ document.getElementById("submit-book").addEventListener("click", function () {
 });
 
 // IMPORT NEW TABLE
-document.getElementById("load-book").addEventListener("click", function () {
+document.getElementById("load-book").addEventListener("click", async function () {
+  // localStorage.setItem(
+  //   "data",
+  //   LZString.decompressFromBase64(
+  //     document.getElementById("load-input").value.toString()
+  //   )
+  // );
+  const books = await loadBooks();
   localStorage.setItem(
     "data",
-    LZString.decompressFromBase64(
-      document.getElementById("load-input").value.toString()
-    )
+    JSON.stringify(books)
   );
-  showError("درحال بارگزاری گزارش جدید...", "rgba(114, 255, 128, 0.8)");
+  showError("درحال هماهنگی گزارش جدید...", "rgba(114, 255, 128, 0.8)");
   setTimeout(() => {
     window.location.reload();
   }, 3000);
+  console.log(books)
 });
 
 // CLEAR TABLE AND REFRESH
-document.getElementById("clear-table").addEventListener("click", function () {
+document.getElementById("clear-table").addEventListener("click", async function () {
   localStorage.setItem("data", JSON.stringify({}));
-
+  saveBooks({})
   showError("درحال پاک کردن گزارش کار...", "rgba(255, 0, 0, 0.8)");
   setTimeout(() => {
     window.location.reload();
   }, 3000);
 });
 
-document.getElementById("export").addEventListener("click", function () {
-  document.getElementById("export").innerText = "خروجی گرفته شد!";
-  navigator.clipboard.writeText(
-    LZString.compressToBase64(localStorage.getItem("data"))
-  );
-  showError("در کلیپبورد شما ذخیره شد!", "rgba(251, 255, 0, 0.8)");
+document.getElementById("export").addEventListener("click", async function () {
+  document.getElementById("export").innerText = "گزارش ارسال شد ✔️";
+  // navigator.clipboard.writeText(
+  //   LZString.compressToBase64(localStorage.getItem("data"))
+  // );
+  saveBooks(JSON.parse(localStorage.getItem("data")))
+  showError("گزارش برای استاد فرستاده شد!👨🏼‍🏫", "rgba(38, 255, 0, 0.8)");
 });
 
-function encodeBase64(str) {
-  const bytes = new TextEncoder().encode(str);
-  let binary = "";
-  bytes.forEach((b) => (binary += String.fromCharCode(b)));
-  return btoa(binary);
-}
-function decodeBase64(base64) {
-  const binary = atob(base64);
-  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
-  return new TextDecoder().decode(bytes);
-}
+// function encodeBase64(str) {
+//   const bytes = new TextEncoder().encode(str);
+//   let binary = "";
+//   bytes.forEach((b) => (binary += String.fromCharCode(b)));
+//   return btoa(binary);
+// }
+// function decodeBase64(base64) {
+//   const binary = atob(base64);
+//   const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+//   return new TextDecoder().decode(bytes);
+// }
 function showError(message, color) {
   document.getElementsByClassName("error")[0].setAttribute("state", "show");
   document.getElementsByClassName("error")[0].innerText = message;

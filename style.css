@@ -72,7 +72,9 @@ input[type=number] {
 
 .error {
     width: 250px;
-    height: 100px;
+    height: fit-content;
+    
+    overflow: auto;
     color: white;
     text-align: center;
     border-radius: 15px;
@@ -89,12 +91,12 @@ input[type=number] {
 }
 
 .error[state="show"] {
-    top: 20px;
-    transition: top .5s ease;
+    top: 50px;
+    transition: top 1s ease;
 }
 
 .error[state="hide"] {
-    top: -100px;
+    top: -200px;
     transition: top .5s ease;
 }
 
@@ -286,20 +288,22 @@ table{
 .footer {
     margin-left: auto;
     margin-right: auto;
-    border-radius: 50px 50px 0px 0px;
+    border-radius: 0px 0px 50px 50px;
+    border-color: black;
+
     background-color: #FFCE99;
     z-index: 1000;
     position: sticky;
-    margin-top: 100px;
-    width: 50%;
+    margin-top: 0px;
+    width: 100%;
     min-width: 765px;
     bottom: 0px;
     height: 70px;
-    box-shadow: -3px 0px  rgb(95, 88, 73),
-     3px 0px  rgb(95, 88, 73),
-     0px -3px rgb(95, 88, 73);
+    box-shadow: +3px 0px  rgb(95, 88, 73),
+     -3px 0px  rgb(95, 88, 73),
+     0px +3px rgb(95, 88, 73);
     overflow: hidden;
-    font-size: clamp(12px, 1.2vw, 16px);
+    font-size: clamp(15px, 1.7vw, 20px);
 }
 .footer
 .footer td {
