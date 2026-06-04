@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://rzxhhokujxzksjlmarjp.supabase.co";
-const SUPABASE_KEY = "key";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6eGhob2t1anh6a3NqbG1hcmpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NjkwOTgsImV4cCI6MjA5NjA0NTA5OH0.R38hwxo-5nMP-duxoulgTs3PKY2IaAPWikSwJmtlpcA";
 const supabaseClient  = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
@@ -408,3 +408,4 @@ function showError(message, color) {
     document.getElementsByClassName("error")[0].setAttribute("state", "hide");
   }, 2000);
 }
+
