@@ -4,7 +4,16 @@ const supabaseClient  = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+async function test() {
+  const { data, error } = await supabaseClient
+    .from("reports")
+    .select("*");
 
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+}
+
+test();
 
 async function saveBooks(books) {
   await supabaseClient 
